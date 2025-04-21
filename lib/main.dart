@@ -136,7 +136,7 @@ class AddItemButton extends StatelessWidget {
         int number = bloc.state.length + 1;
         final item = CustomCardWidget(
           graphWidget: GraphWidget(
-              samplesNumber: getRandomValue(100, 220),
+              samplesNumber: 256, //getRandomValue(100, 220),
               width: 340,
               height: 100,
               mode: (number % 2 == 0) ? GraphMode.overlay : GraphMode.flowing),
