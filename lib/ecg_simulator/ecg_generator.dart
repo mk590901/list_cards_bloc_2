@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'dart:io';
 import 'ecg_log.dart';
-import 'ecg_param2.dart';
+import 'ecg_param.dart';
 import 'ieee_remainder.dart';
 
 class ECGGenerator {
@@ -21,7 +21,7 @@ class ECGGenerator {
   final List<double> b; // PQRST widths
   final int seed; // Random seed
   final EcgLogWindow log; // Logger
-  late EcgParam2 paramOb; // Store EcgParam instance
+  late EcgParam paramOb; // Store EcgParam instance
 
   // Adjusted parameters (radians, scaled for heart rate)
   late List<double> ti; // PQRST angles (radians)
@@ -60,7 +60,7 @@ class ECGGenerator {
   static const int mstate = 3; // State space dimension
 
   ECGGenerator({
-    required EcgParam2 param,
+    required EcgParam param,
     required this.log,
   })  : hrmean = param.getHrMean(),
         hrstd = param.getHrStd(),

@@ -1,6 +1,6 @@
 import 'dart:math';
 
-class EcgParam2 {
+class EcgParam {
   double _hrMean = 60.0; // Mean heart rate (beats/min)
   double _hrStd = 1.0; // Heart rate standard deviation
   double _lfHfRatio = 0.5; // LF/HF ratio
@@ -14,11 +14,11 @@ class EcgParam2 {
   int _n = 1000; // Approximate number of heart beats
   int _seed = -1; // Random seed
   int _ecgAnimateInterval = 1000; // Animation interval (ms)
-  List<double> _theta = List.filled(6, 0.0); // PQRST angles (degrees)
-  List<double> _a = List.filled(6, 0.0); // PQRST amplitudes (mV)
-  List<double> _b = List.filled(6, 0.0); // PQRST widths
+  final List<double> _theta = List.filled(6, 0.0); // PQRST angles (degrees)
+  final List<double> _a = List.filled(6, 0.0); // PQRST amplitudes (mV)
+  final List<double> _b = List.filled(6, 0.0); // PQRST widths
 
-  EcgParam2() {
+  EcgParam() {
     // Default PQRST parameters (P, Q, R, S, T)
     _theta[1] = -70.0;
     _theta[2] = -15.0;
