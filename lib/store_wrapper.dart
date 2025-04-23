@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'circular_buffer.dart';
-import 'ecg_simulator/ecg_runner.dart';
+import 'ecg_simulator/ecg_simulator.dart';
 import 'graph_mode.dart';
 import 'utils.dart';
 /*
@@ -36,7 +36,7 @@ class StoreWrapper {
 
   late  CircularBuffer<int> buffer_;
 
-  final EcgRunner runner = EcgRunner();
+  final EcgSimulator runner = EcgSimulator();
 
   late  double  step;
   late  Path    path;

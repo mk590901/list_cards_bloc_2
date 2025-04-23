@@ -1,16 +1,16 @@
-import 'package:list_cards/ecg_simulator/ecg_param.dart';
 import 'ecg_generator.dart';
 import 'ecg_log.dart';
+import 'ecg_param.dart';
 
 // Source: A separate Java version of ECGSYN is available from the MIT website at Java ECG Generator,
 // where the source code can be downloaded.
 
-class EcgRunner {
+class EcgSimulator {
   final EcgLogWindow log = EcgLogWindow();
   final EcgParam  param = EcgParam();
   late ECGGenerator generator;
 
-  EcgRunner() {
+  EcgSimulator() {
     generator = ECGGenerator(param: param, log: log);
   }
 
