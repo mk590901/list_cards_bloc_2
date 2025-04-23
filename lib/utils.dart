@@ -27,7 +27,16 @@ List<int> extractRangeData(final List<int> rowData, final int start, final int n
     result = rowData.sublist(start, rowLength);
     return result;
   }
-  result = rowData.sublist(start, start + number);
+  // result = rowData.sublist(start, start + number);
+  // print ('[$start,${start + number}]');
+  int final_ = start + number;
+  if ((final_ + number) > rowLength) {
+    final_ += rowLength - final_;
+  }
+
+  result = rowData.sublist(start, final_);
+  //print ('[$start,$final_]');
+
   return result;
 }
 

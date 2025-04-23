@@ -25,7 +25,7 @@ List<int> rowData = [
 ];
 */
 
-List<int> rowData = List<int>.filled(260, 0);
+List<int> rowData = List<int>.filled(256, 0);
 
 class StoreWrapper {
 
@@ -76,8 +76,13 @@ class StoreWrapper {
       }
     }
 
+    // if (counter == 35) {
+    //   int x = 0;
+    //   int y = x;
+    // }
+
     List<int> dataExtracted = extractRangeData(rowData, (counter-1)*seriesSize, seriesSize);
-    print ('seriesSize->$seriesSize, counter->$counter, dataExtracted.len->${dataExtracted.length}');
+    //print ('seriesSize->$seriesSize, counter->$counter, dataExtracted.len->${dataExtracted.length}');
     //List<int> dataExtracted = runner.generateBuffer();
     buffer_.writeRow(dataExtracted);
   }

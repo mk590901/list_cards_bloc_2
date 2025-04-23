@@ -43,7 +43,7 @@ class Obtained {
 
   void _callbackFunction(String uuid) {
     redraw(_context, uuid, _counter++);
-    if (_counter >= _cycles) {
+    if (_counter > _cycles) {  //  _counter >= _cycles
       _counter = 1;
     }
   }
