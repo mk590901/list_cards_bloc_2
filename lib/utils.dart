@@ -29,13 +29,13 @@ List<int> extractRangeData(final List<int> rowData, final int start, final int n
   }
   // result = rowData.sublist(start, start + number);
   // print ('[$start,${start + number}]');
-  int final_ = start + number;
-  if ((final_ + number) > rowLength) {
-    final_ += rowLength - final_;
+  int fin = start + number;
+  if ((fin + number) > rowLength) {
+    fin += rowLength - fin;
   }
 
-  result = rowData.sublist(start, final_);
-  //print ('[$start,$final_]');
+  result = rowData.sublist(start, fin);
+  //print ('[$start,$fin]');
 
   return result;
 }
