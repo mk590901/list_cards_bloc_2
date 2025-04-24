@@ -39,6 +39,12 @@ List<int> extractRangeData(final List<int> rowData, final int start, final int n
 
   return result;
 }
+int getSeriesLength() {
+  List<int> series = [128, 256, 512, 1024];
+  final random = Random();
+  int randomIdx = random.nextInt(series.length); // Generates 0, 1, 2, 3, 4, 5, or 6, ...
+  return series[randomIdx];
+}
 
 int getRandomValue(final int min, final int max) {
   return Random().nextInt(max - min + 1) + min;

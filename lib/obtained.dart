@@ -16,7 +16,9 @@ class Obtained {
 
   int _counter = 1; //  Ok
 
-  Obtained (this._period, this._cycles, this._context);
+  Obtained (this._period, this._cycles, this._context) {
+    _timer = null;
+  }
 
   Obtained.part (this._period);
 
@@ -49,6 +51,7 @@ class Obtained {
   }
 
   void stop(final String uuid) {
+
     if (_timer != null && _timer!.isActive) {
       _timer?.cancel();
     }

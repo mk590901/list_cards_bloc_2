@@ -4,8 +4,6 @@ import 'ecg_simulator/ecg_simulator.dart';
 import 'graph_mode.dart';
 import 'utils.dart';
 
-List<int> rowData = List<int>.filled(256, 0);
-
 class StoreWrapper {
 
   final int _drawSeriesLength;  //  Drawable data size per second
@@ -15,7 +13,7 @@ class StoreWrapper {
 
   late  CircularBuffer<int> buffer_;
 
-  final EcgSimulator simulator = EcgSimulator();
+  late EcgSimulator simulator;
 
   late  double  step;
   late  Path    path;
@@ -28,7 +26,11 @@ class StoreWrapper {
   late int readIndex;
   late int size;
 
+  late List<int> rowData;
+
   StoreWrapper(this._seriesLength, this._seriesNumber, this._drawSeriesLength, this._mode) {
+    simulator = EcgSimulator(_seriesLength);
+    rowData = List<int>.filled(_seriesLength, 0);
     buffer_ = CircularBuffer<int>(_seriesLength*_seriesNumber);
   }
 
@@ -37,8 +39,8 @@ class StoreWrapper {
   }
 
   int drawingFrequency() {
-    //return ((rowData.length).toDouble()/_drawSeriesLength).toInt();
-    return ((256).toDouble()/_drawSeriesLength).toInt();
+    return ((rowData.length).toDouble()/_drawSeriesLength).toInt();
+    //return ((_seriesLength).toDouble()/_drawSeriesLength).toInt();
   }
 
   int seriesLength() {
