@@ -52,7 +52,7 @@ Uses small arrays (xt, yt, zt, etc.) sized for one buffer, avoiding large storag
 _rrBuffer is limited to 10 intervals, recomputed as needed.
 
 # Integration.
-To visualize the __ECG__ signal, an application created a year ago is used, which can be found in the repository https://github.com/mk590901/list_cards_bloc. In the updateBuffer procedure of the StoreWrapper class, the __rowData__ data buffer is filled by the __simulator.generateBuffer()__ procedure of the simulator. It replaces the giant buffer of static data used in the original version.
+To visualize the __ECG__ signal, an application created a year ago is used, which can be found in the repository https://github.com/mk590901/list_cards_bloc. In the updateBuffer procedure of the __StoreWrapper__ class, the __rowData__ data buffer is filled by the __simulator.generateBuffer()__ procedure of the simulator. It replaces the giant buffer of static data used in the original version.
 
 # Movie
 
