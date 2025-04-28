@@ -40,7 +40,6 @@ class StoreWrapper {
 
   int drawingFrequency() {
     return ((rowData.length).toDouble()/_drawSeriesLength).toInt();
-    //return ((_seriesLength).toDouble()/_drawSeriesLength).toInt();
   }
 
   int seriesLength() {
@@ -58,7 +57,6 @@ class StoreWrapper {
     }
 
     List<int> dataExtracted = extractRangeData(rowData, (counter-1)*seriesSize, seriesSize);
-    //print ('seriesSize->$seriesSize, counter->$counter, dataExtracted.len->${dataExtracted.length}');
     buffer_.writeRow(dataExtracted);
   }
 
