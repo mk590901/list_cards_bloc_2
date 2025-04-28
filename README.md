@@ -35,21 +35,21 @@ Need store runtime state (__current time__, __RR-intervals__, __trajectory __coo
 * Stores configuration parameters directly from __EcgParam__, adjusting __ti, ai, bi__ in _initializeParameters.
 
 ### State Management
-Tracks runtime state: ___t__ (current time), _x (trajectory coordinates), _rrBuffer (RR-intervals), _zmin/_zmax (for scaling).
-Maintains random number generator state (_rseed, _iy, _iv) for ran1.
+Tracks runtime state: ___t__ (current time), ___x__ (trajectory coordinates), ___rrBuffer__ (RR-intervals), ___zmin/_zmax__ (for scaling).
+Maintains random number generator state __(_rseed, _iy, _iv)__ for __ran1__.
 
 ### RR-Interval Generation
-_generateRRBuffer generates a small batch (512 RR-intervals) using function rrprocess, storing up to 10 in _rrBuffer.
-_rrIndex and _nextRRTime ensure smooth transitions between RR-intervals.
+___generateRRBuffer__ generates a small batch (512 RR-intervals) using function __rrprocess__, storing up to 10 in _rrBuffer.
+___rrIndex__ and ___nextRRTime__ ensure smooth transitions between RR-intervals.
 
 ### Buffer Generation
-* generateBuffer(int bufSize) produces a list of __[time, voltage, peak]__ for bufSize samples.
-* Integrates at internal frequency (sf), downsamples to sfecg, detects peaks, and applies scaling/noise.
-* Updates _t and _x for continuity.
+* __generateBuffer(int bufSize)__ produces a list of __[time, voltage, peak]__ for bufSize samples.
+* Integrates at internal frequency (__sf__), downsamples to sfecg, detects peaks, and applies scaling/noise.
+* Updates ___t__ and ___x__ for continuity.
 
 ## Memory Efficiency
-Uses small arrays (xt, yt, zt, etc.) sized for one buffer, avoiding large storage.
-_rrBuffer is limited to 10 intervals, recomputed as needed.
+Uses small arrays (__xt__, __yt__, __zt__, etc.) sized for one buffer, avoiding large storage.
+___rrBuffer__ is limited to 10 intervals, recomputed as needed.
 
 # Integration.
 To visualize the __ECG__ signal, an application created a year ago is used, which can be found in the repository https://github.com/mk590901/list_cards_bloc. In the updateBuffer procedure of the __StoreWrapper__ class, the __rowData__ data buffer is filled by the __simulator.generateBuffer()__ procedure of the simulator. It replaces the giant buffer of static data used in the original version.
