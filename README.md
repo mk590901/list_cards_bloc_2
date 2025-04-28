@@ -35,8 +35,8 @@ Need store runtime state (__current time__, __RR-intervals__, __trajectory __coo
 * Stores configuration parameters directly from __EcgParam__, adjusting __ti, ai, bi__ in _initializeParameters.
 
 ### State Management
-Tracks runtime state: ___t__ (current time), ___x__ (trajectory coordinates), ___rrBuffer__ (RR-intervals), ___zmin/_zmax__ (for scaling).
-Maintains random number generator state __(_rseed, _iy, _iv)__ for __ran1__.
+Tracks runtime state: ___t__ (current time), ___x__ (trajectory coordinates), ___rrBuffer__ (RR-intervals), ___zmin__/___zmax__ (for scaling).
+Maintains random number generator state (___rseed__, ___iy__, ___iv__) for __ran1__.
 
 ### RR-Interval Generation
 ___generateRRBuffer__ generates a small batch (512 RR-intervals) using function __rrprocess__, storing up to 10 in _rrBuffer.
