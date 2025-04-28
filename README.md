@@ -1,6 +1,6 @@
 # A realistic ECG waveform generator on flutter
 
-The application below is a runtime ECG simulator using the ECGSYN code, where small batches of samples (e.g. 128, 200, 256, 500 or 1000 samples per second) are generated.
+The application below is a runtime __ECG simulator__ using the __ECGSYN__ code, where small batches of samples (e.g. 128, 200, 256, 500 or 1000 samples per second) are generated.
 
 The project code https://github.com/mk590901/ecg_calc/ is modified to support streaming data generation instead of creating the full signal (65K samples) at once. This will minimize memory usage by avoiding storing large vectors and will provide data output as needed. The approach to modifying the source code, including key changes, solution architecture and implementation example are described below.
 
