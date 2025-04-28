@@ -14,7 +14,7 @@ The project code https://github.com/mk590901/ecg_calc/ is modified to support st
 
 ## Stream PQRST Generation
 * Need modify the trajectory integration (__rk4__, __derivspqrst__) to produce samples incrementally for a given buffer size.
-* Need to update state (time, phase, coordinates) after generate each buffer.
+* Need to update state __(time, phase, coordinates)__ after generate each buffer.
 
 ## Handle Peak Detection:
 * Peak detection should be done on each buffer, storing results incrementally if needed.
