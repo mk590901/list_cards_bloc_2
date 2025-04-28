@@ -43,7 +43,7 @@ _generateRRBuffer generates a small batch (512 RR-intervals) using function rrpr
 _rrIndex and _nextRRTime ensure smooth transitions between RR-intervals.
 
 ### Buffer Generation
-* generateBuffer(int bufSize) produces a list of [time, voltage, peak] for bufSize samples.
+* generateBuffer(int bufSize) produces a list of __[time, voltage, peak]__ for bufSize samples.
 * Integrates at internal frequency (sf), downsamples to sfecg, detects peaks, and applies scaling/noise.
 * Updates _t and _x for continuity.
 
@@ -55,6 +55,10 @@ _rrBuffer is limited to 10 intervals, recomputed as needed.
 To visualize the __ECG__ signal, an application created a year ago is used, which can be found in the repository https://github.com/mk590901/list_cards_bloc. In the updateBuffer procedure of the __StoreWrapper__ class, the __rowData__ data buffer is filled by the __simulator.generateBuffer()__ procedure of the simulator. It replaces the giant buffer of static data used in the original version.
 
 # Movie
+
+https://github.com/user-attachments/assets/d456ea0a-d27b-4f1f-bb74-11de20edf488
+
+
 
 
 
