@@ -26,7 +26,7 @@ The project code https://github.com/mk590901/ecg_calc/ is modified to support st
 Must create __generateBuffer(int size)__ procedure for synchronous buffer generation.
 
 ## State Management:
-Need store runtime state (current time, RR-intervals, trajectory coordinates, etc.) in the basic class.
+Need store runtime state (__current time__, __RR-intervals__, __trajectory __coordinates, etc.) in the basic class.
 
 ## Key Changes and Features
 
@@ -35,7 +35,7 @@ Need store runtime state (current time, RR-intervals, trajectory coordinates, et
 * Stores configuration parameters directly from __EcgParam__, adjusting __ti, ai, bi__ in _initializeParameters.
 
 ### State Management
-Tracks runtime state: _t (current time), _x (trajectory coordinates), _rrBuffer (RR-intervals), _zmin/_zmax (for scaling).
+Tracks runtime state: ___t__ (current time), _x (trajectory coordinates), _rrBuffer (RR-intervals), _zmin/_zmax (for scaling).
 Maintains random number generator state (_rseed, _iy, _iv) for ran1.
 
 ### RR-Interval Generation
