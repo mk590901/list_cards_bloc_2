@@ -22,10 +22,10 @@ The project code https://github.com/mk590901/ecg_calc/ is modified to support st
 ## Scaling and Noise
 * Need apply scaling and noise to each buffer, tracking min/max dynamically or using predefined ranges.
 
-## To implement streaming Interface:
+## To implement streaming Interface
 Must create __generateBuffer(int size)__ procedure for synchronous buffer generation.
 
-## State Management:
+## State Management
 Need store runtime state (__current time__, __RR-intervals__, __trajectory __coordinates, etc.) in the basic class.
 
 ## Key Changes and Features
